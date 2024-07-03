@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Century Gothic";
+    src: url("/assets/fonts/centurygothic.ttf");
+}
+
+body {
+    background-color: rgb(21, 15, 2);
+    color: rgb(176, 112, 49);
+    font-family: "Century Gothic";
+}
+
+a {
+    color: rgb(236, 171, 107)
+}
+
+h1 {
+    color: rgb(237, 146, 146);
+}
+
+h2 {
+    color: rgb(104, 141, 173)
+}
+
+div.content {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 500px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+nav > ul > li {
+    margin-left: 20px;
+    color: rgb(171, 206, 237);
+}
+
+nav > ul > li > a {
+    color: rgb(91, 154, 57);
+}

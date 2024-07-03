@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Cecilia Feng">
+        <meta name="description" content="silly girl website">
+        <title>Tracer Gallery</title>
+        <link rel="stylesheet" href="/styles/styles.css">
+        <style>
+            div.displayer {
+                margin-bottom: 50px;
+                display: grid;
+                background-color: rgb(67, 43, 8);
+                border: 2mm ridge rgb(127, 90, 35);
+            }
+            div.displayer > img {
+                width: 400px;
+                margin: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            div.displayer > p {
+                margin: auto;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programming.html">Programming stuff</a></li>
+                </ul>
+            </nav>
+            <h1>Some output images of my path tracer</h1>
+            <div class="displayer">
+                <img src="tracer_images/0.png">
+                <p>Depth of field</p>
+            </div>
+            <div class="displayer">
+                <img src="tracer_images/1.png">
+                <p>Creeper inside a water cube</p>
+            </div>
+            <div class="displayer">
+                <img src="tracer_images/2.png">
+                <p>Camera looking through a water cube</p>
+            </div>
+            <div class="displayer">
+                <img src="tracer_images/3.png">
+                <p>Glossy surface</p>
+            </div>
+            <div class="displayer">
+                <img src="tracer_images/4.png">
+                <p>Matte surface</p>
+            </div>
+        </div>
+    </body>
+</html>
