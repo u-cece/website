@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Century Gothic";
-    src: url("/assets/fonts/centurygothic.ttf");
+    src: url("/fonts/centurygothic.ttf");
 }
 
 body {
-    background-color: rgb(21, 15, 2);
-    color: rgb(176, 112, 49);
+    background-color: rgb(35, 13, 18);
+    color: rgb(204, 139, 75);
     font-family: "Century Gothic";
 }
 
@@ -18,10 +18,10 @@ h1 {
 }
 
 h2 {
-    color: rgb(104, 141, 173)
+    color: rgb(237, 146, 146);
 }
 
-div.content {
+.content {
     margin: auto;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -32,17 +32,42 @@ li {
     margin-bottom: 8px;
 }
 
-nav > ul {
+#navigation {
     display: flex;
+    gap: 20px;
     justify-content: flex-end;
-    list-style-type: none;
 }
 
-nav > ul > li {
-    margin-left: 20px;
-    color: rgb(171, 206, 237);
+#navigation > div {
+    height: 30px;
+    line-height: 30px;
+    user-select: none;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: rgb(237, 146, 146);
 }
 
-nav > ul > li > a {
-    color: rgb(91, 154, 57);
+#navigation > div.differentPage {
+    cursor: pointer;
+}
+
+#navigation > div:not(.differentPage) {
+    background-color: rgb(66, 34, 34);
+    border-radius: 4px;
+}
+
+#buttonDisplay  {
+    margin-top: 150px;
+    overflow: hidden;
+}
+
+#buttonDisplay > * {
+    display: inline-block;
+    position: relative;
+    left: 88px;
+    margin-left: -88px;
+}
+
+#buttonDisplay > .button {
+    image-rendering: pixelated;
 }
