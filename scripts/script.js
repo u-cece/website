@@ -7,25 +7,26 @@ function makeNavigationInfo(page, display) {
 
 function generateNavigationBar() {
     const navigationLinks = [
-        makeNavigationInfo("index.html", "Home"),
-        makeNavigationInfo("programming.html", "Programming stuff")
-    ]
-    const page = window.location.pathname.split("/").pop();
+        makeNavigationInfo("index", "Home"),
+        makeNavigationInfo("programming", "Programming stuff")
+    ];
+    let page = window.location.pathname.split("/").pop();
+    if (page.endsWith(".html"))
+        page = page.substring(0, page.length - 5);
     let navElement = document.getElementById("navigation");
     for (const navigationInfo of navigationLinks) {
+        const element = document.createElement("div");
+        const textNode = document.createTextNode(navigationInfo.display);
+        element.appendChild(textNode);
         if (navigationInfo.page === page) {
-            let htmlStr = "<div>";
-            htmlStr += navigationInfo.display;
-            htmlStr += "</div>";
-            navElement.insertAdjacentHTML("beforeend", htmlStr);
+            element.setAttribute("class", "samePage");
         } else {
-            let htmlStr = "<div class=\"differentPage\" onClick=\"location.href = '";
-            htmlStr += navigationInfo.page;
-            htmlStr += "';\">";
-            htmlStr += navigationInfo.display;
-            htmlStr += "</div>";
-            navElement.insertAdjacentHTML("beforeend", htmlStr);
+            let onClickAttrib = "location.href = '";
+            onClickAttrib += navigationInfo.page + ".html";
+            onClickAttrib += "';";
+            element.setAttribute("onClick", onClickAttrib);
         }
+        navElement.insertAdjacentElement("beforeend", element);
     }
 }
 

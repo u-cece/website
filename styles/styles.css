@@ -21,7 +21,7 @@ h2 {
     color: rgb(237, 146, 146);
 }
 
-.content {
+#content {
     margin: auto;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -47,11 +47,11 @@ li {
     color: rgb(237, 146, 146);
 }
 
-#navigation > div.differentPage {
+#navigation > div:not(.samePage) {
     cursor: pointer;
 }
 
-#navigation > div:not(.differentPage) {
+#navigation > div.samePage {
     background-color: rgb(66, 34, 34);
     border-radius: 4px;
 }
