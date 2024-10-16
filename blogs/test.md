@@ -1,0 +1,3 @@
+Testing......
+
+Blogs are stored in .md files and compiled and loaded when the page is loaded

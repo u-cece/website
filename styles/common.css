@@ -13,14 +13,9 @@ a {
     color: rgb(236, 171, 107)
 }
 
-h1 {
+:is(h1, h2, h3, h4, h5, h6) {
     color: rgb(237, 146, 146);
 }
-
-h2 {
-    color: rgb(237, 146, 146);
-}
-
 #content {
     margin: auto;
     margin-top: 40px;

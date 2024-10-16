@@ -2,6 +2,8 @@
 
 import { blogInfos, getBlogFilePath } from "./blog-common.js";
 
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+
 function generateBlogContent() {
     const urlParam = new URLSearchParams(window.location.search);
     if (!urlParam.has("id"))
@@ -23,10 +25,8 @@ function generateBlogContent() {
     fetch(getBlogFilePath(id))
     .then((res) => res.text())
     .then((content) => {
-        const contentElement = document.createElement("p");
-        const contentTextNode = document.createTextNode(content);
-        contentElement.appendChild(contentTextNode);
-        blogContent.insertAdjacentElement("beforeend", contentElement);
+        const contentElement = marked.parse(content);
+        blogContent.insertAdjacentHTML("beforeend", contentElement);
     });
 }
 

@@ -1,3 +1,0 @@
-For testing purposes...
-
-As of now, blogs are stored under /blogs/ in .txt files, and they are loaded by JS scripts.

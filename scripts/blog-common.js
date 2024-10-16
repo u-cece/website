@@ -9,7 +9,7 @@ function makeBlogInfo(id, title, date) {
 }
 
 export function getBlogFilePath(id) {
-    return `/blogs/${id}.txt`;
+    return `/blogs/${id}.md`;
 }
 
 export const blogInfos = makeBlogInfos();

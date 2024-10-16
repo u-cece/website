@@ -2,6 +2,8 @@
 
 import { blogInfos, getBlogFilePath } from "./blog-common.js";
 
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+
 function generateBlogList() {
     const blogListElement = document.getElementById("blog-list");
     if (blogListElement == null)
@@ -45,7 +47,8 @@ function generateBlogList() {
             dateElement.appendChild(dateTextNode);
             entryElement.appendChild(dateElement);
 
-            let displayText = content.blogContent.substring(0, 200);
+            const parsedBlogContent = marked.parse(content.blogContent);
+            let displayText = parsedBlogContent.replace(/<[^>]*>/g, '').substring(0, 200);
             if (content.blogContent.length > displayText.length)
                 displayText += "...";
             const previewElement = document.createElement("div");
