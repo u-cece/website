@@ -1,0 +1,23 @@
+#navigation {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+#navigation > div {
+    height: 30px;
+    line-height: 30px;
+    user-select: none;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: rgb(237, 146, 146);
+}
+
+#navigation > div:not(.same-page) {
+    cursor: pointer;
+}
+
+#navigation > div.same-page {
+    background-color: rgb(66, 34, 34);
+    border-radius: 4px;
+}

@@ -1,0 +1,15 @@
+#buttons  {
+    margin-top: 150px;
+    overflow: hidden;
+}
+
+#buttons > * {
+    display: inline-block;
+    position: relative;
+    left: 88px;
+    margin-left: -88px;
+}
+
+#buttons > .button {
+    image-rendering: pixelated;
+}
