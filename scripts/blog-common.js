@@ -12,15 +12,24 @@ export function getBlogFilePath(id) {
     return `/blogs/${id}.md`;
 }
 
-export const blogInfos = makeBlogInfos();
+let blogInfos = null;
 
-function makeBlogInfos() {
-    const blogInfos = [
-        makeBlogInfo("test", "Test a;dkfja;jadjkfbalkjd h ajkdkf", new Date(2024, 10, 15))
-    ];
-    const map = {};
-    for (const blogInfo of blogInfos) {
-        map[blogInfo.id] = blogInfo;
+export async function getBlogInfos() {
+    if (blogInfos == null) {
+        const res = await fetch("/blogs/list.json");
+        const blogInfosJson = await res.json();
+    
+        const map = {};
+        for (const blogInfoJson of blogInfosJson) {
+            const dateComps = blogInfoJson.date.split("-");
+            const blogInfo = makeBlogInfo(
+                blogInfoJson.id,
+                blogInfoJson.title,
+                new Date(dateComps[0], dateComps[1], dateComps[2])
+            );
+            map[blogInfo.id] = blogInfo;
+        }
+        blogInfos = map;
     }
-    return map;
+    return blogInfos;
 }

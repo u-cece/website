@@ -7,6 +7,7 @@ body {
     background-color: rgb(35, 13, 18);
     color: rgb(204, 139, 75);
     font-family: "Century Gothic";
+    font-size: large;
 }
 
 a {
@@ -20,7 +21,7 @@ a {
     margin: auto;
     margin-top: 40px;
     margin-bottom: 50px;
-    width: 500px;
+    width: 700px;
 }
 
 li {
